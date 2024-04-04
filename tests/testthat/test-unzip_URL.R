@@ -1,7 +1,3 @@
-library(testthat)
-source("../../R/unzip_URL.R")
-on.exit(unlink('OnlineNewsPopularity', recursive = TRUE))
-
 
 test_that("`unzip_URL` should throw error if URL is real", {
   expect_error(unzip_URL(badURL, goodPath))
@@ -19,6 +15,7 @@ test_that("Data extracted successfully", {
 
 test_that("Temp file deleted", {
     unzip_URL(goodURL, goodPath)
+    on.exit(unlink('OnlineNewsPopularity', recursive = TRUE))
     expect_false(removeTemp)
 })
 

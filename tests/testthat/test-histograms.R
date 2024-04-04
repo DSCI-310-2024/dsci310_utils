@@ -1,5 +1,3 @@
-library(testthat)
-source("../../R/histograms.R")
 
 test_that("data_frame should be a dataframe", 
 {expect_error(make_histogram(list_wrong_type, "num_imgs", "shares", 
