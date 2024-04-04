@@ -5,5 +5,4 @@ goodURL <- 'https://archive.ics.uci.edu/static/public/332/online+news+popularity
 badURL <- 'a'
 goodPath <- '.'
 badPath <- '\ '
-numberOfFiles <- length(list.files(paste('.', 'OnlineNewsPopularity', sep = '/')))
 removeTemp <- file.remove('./a.zip')

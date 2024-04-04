@@ -3,17 +3,14 @@
 #' @param data_frame a dataframe that need to be preprocessed
 #' @param xvar the column/ variable for the x-axis of the histogram
 #' @param yvar the column/ variable for the y-axis of the histogram
-#' @param title the title for the histogram
+#' @param hist_title the title for the histogram
 #' @param xlabel the label for the x-axis of the histogram
 #' @return a histogram with the given data and arguments
 #'
-#' @examples make_histogram(fullData, num_href, is_popular, 
-#'                         "Histogram for is popular against num_refs", 
-#'                         "Number of links", "Number of shares")
+#' @export 
 #' 
 #' 
 
-suppressMessages(library(tidyverse))
 
 
 make_histogram <- function(data_frame, xvar, yvar, hist_title, xlabel) {

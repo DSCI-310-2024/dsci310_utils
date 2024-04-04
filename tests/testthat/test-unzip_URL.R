@@ -1,5 +1,6 @@
 library(testthat)
 source("../../R/unzip_URL.R")
+on.exit(unlink('OnlineNewsPopularity', recursive = TRUE))
 
 
 test_that("`unzip_URL` should throw error if URL is real", {
@@ -12,6 +13,7 @@ test_that("`unzip_URL` should throw error if attempts to unzip a non-zipped fold
 
 test_that("Data extracted successfully", {
     unzip_URL(goodURL, goodPath)
+    numberOfFiles <- length(list.files(paste('.', 'OnlineNewsPopularity', sep = '/')))
     expect_equal(numberOfFiles,2)
 })
 
