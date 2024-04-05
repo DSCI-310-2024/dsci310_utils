@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![codecov](https://codecov.io/gh/agill59/dsci310utils/branch/main/graph/badge.svg)](https://codecov.io/gh/agill59/dsci310utils)
+[![codecov](https://codecov.io/gh/DSCI-310-2024/dsci310utils/branch/main/graph/badge.svg)](https://codecov.io/gh/DSCI-310-2024/dsci310utils)
 <!-- badges: end -->
 
 The goal of dsci310utils is to …
