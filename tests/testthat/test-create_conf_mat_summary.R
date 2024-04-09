@@ -1,3 +1,5 @@
+library(testthat)
+source("../../R/create_conf_mat_summary.R")
 
 test_that("Function creates CSV correctly with valid input", {
   temp_dir <- tempdir()
