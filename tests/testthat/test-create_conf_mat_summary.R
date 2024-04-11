@@ -1,5 +1,3 @@
-source("../../R/create_conf_mat_summary.R")
-
 test_that("Function creates CSV correctly with valid input", {
   temp_dir <- tempdir()
   create_conf_mat_summary(50, 10, 5, 35, temp_dir)
