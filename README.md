@@ -53,3 +53,16 @@ You can also embed plots, for example:
 
 In that case, don’t forget to commit and push the resulting figure
 files, so they display on GitHub and CRAN.
+
+### Running the test
+Tests are run using the testthat command at the root of the project.
+
+Run the following command in the R terminal:
+```
+testthat::test_dir("tests/testthat")
+```
+Check out the [test sites](https://github.com/DSCI-310-2024/dsci310utils/tree/main/tests/testthat) that can find more information.
+
+### Licenses
+
+The software content of this template repository licensed under the [MIT License](https://spdx.org/licenses/MIT.html). See the [license file](LICENSE.md) for more information.
