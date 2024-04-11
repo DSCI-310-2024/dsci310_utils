@@ -31,8 +31,7 @@ jobs:
         run: |
           covr::codecov(
             quiet = FALSE,
-            clean = FALSE,
-            install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
+            clean = FALSE
           )
         shell: Rscript {0}
 
@@ -49,3 +48,4 @@ jobs:
         with:
           name: coverage-test-failures
           path: ${{ runner.temp }}/package
+
