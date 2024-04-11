@@ -1,4 +1,3 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # dsci310utils
@@ -7,14 +6,19 @@
 
 [![codecov](https://codecov.io/gh/DSCI-310-2024/dsci310utils/branch/main/graph/badge.svg)](https://codecov.io/gh/DSCI-310-2024/dsci310utils)
 [![R-CMD-check](https://github.com/DSCI-310-2024/dsci310_utils/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310-2024/dsci310_utils/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
-The goal of dsci310utils is to …
+The goal of dsci310utils is to simplifying the data analysis workflow. The package focuses on data extraction, data preprocessing, confusion matrix data summarization, and visualization. The package includes functions for:
+
+-   Extracting the files in a zipped folder that is downloaded from a URL.
+-   Cleaning the data frame and returns a cleaned data frame with only the required columns.
+-   Creating a histogram with the given data.
+-   Creating and Write a Summary of the Confusion Matrix
 
 ## Installation
 
-You can install the development version of dsci310utils from
-[GitHub](https://github.com/) with:
+You can install the development version of dsci310utils from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -25,44 +29,75 @@ devtools::install_github("DSCI-310-2024/dsci310_utils")
 
 This is a basic example which shows you how to solve a common problem:
 
+1.  The `unzip_URL()` is designed to download and extract files from a zipped folder located at a specified URL directly into a target directory. This utility function simplifies the process of obtaining zipped data from the internet by automating both the download and extraction steps, saving time and streamlining data preparation tasks.
+
+    For convenience, and to illustrate its usage without executing the extraction in this documentation, the command is presented in comment form below:
+
+    ``` r
+    #Since thsi function will extract files to target directory, for convince, we just show the comment how to use it 
+
+    # Example usage:
+    #unzip_URL('https://archive.ics.uci.edu/static/public/332/online+news+popularity.zip', "data/")
+    ```
+
+<!-- -->
+
+2.  The `clean_data()` function is designed to streamline the preprocessing of data frames. This function is particularly beneficial when dealing with large datasets, where only specific columns are needed for analysis.
+
 ``` r
 library(dsci310utils)
-## basic example code
+
+required_columns <- c("shares", "num_hrefs", "is_popular")
+
+share_data <- data.frame(
+  shares = c(593, 711, 1500, 1200, 505, 855),
+  num_hrefs = c(4, 3, 3, 9, 19, 2),
+  num_imgs = c(1, 1, 1, 1, 20, 0),
+  num_videos = c(0, 0, 0, 0, 0, 0),
+  is_popular = c(0, 0, 1, 0, 0, 0)
+)
+
+clean_data_frame <- clean_data(share_data, required_columns)
+
+head(clean_data_frame)
+#>   shares num_hrefs is_popular
+#> 1    593         4          0
+#> 2    711         3          0
+#> 3   1500         3          1
+#> 4   1200         9          0
+#> 5    505        19          0
+#> 6    855         2          0
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+3.  The `make_histogram()` create a histogram with the given data. The function simplifies the process of creating histograms, requiring only the necessary variables without worrying about the underlying plotting details.
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+
+clean_data_frame$is_popular <- factor(clean_data_frame$is_popular)
+
+make_histogram(clean_data_frame, "num_hrefs", "is_popular","number of shares", "Histogram of shares")
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+<img src="man/figures/README-example3-1.png" width="100%"/>
 
-You can also embed plots, for example:
+4.  The `create_conf_mat_summary()` function calculates precision, recall, and accuracy using the components of a given confusion matrix (TP, FP, FN, TN). It then records these summary statistics into a CSV file, which is saved in the specified directory. Utilizing this function can significantly enhance the evaluation process of predictive models by offering a quick and reliable method for assessing the performance of prediction models.
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+``` r
+temp_dir <- tempdir()
+create_conf_mat_summary(TP = 100, FP = 10, FN = 5, TN = 85, output_directory = temp_dir)
+```
 
 ### Running the test
+
 Tests are run using the testthat command at the root of the project after finishing the installation and library part.
 
 Run the following command in the R terminal:
-```
+
+```         
 testthat::test_dir("tests")
 ```
+
 Check out the [test sites](https://github.com/DSCI-310-2024/dsci310utils/tree/main/tests/testthat) that can find more information.
 
 ### Licenses
-
 The software content of this template repository licensed under the [MIT License](https://spdx.org/licenses/MIT.html). See the [license file](LICENSE.md) for more information.
