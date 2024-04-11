@@ -5,6 +5,7 @@
 <!-- badges: start -->
 
 [![codecov](https://codecov.io/gh/DSCI-310-2024/dsci310utils/branch/main/graph/badge.svg)](https://codecov.io/gh/DSCI-310-2024/dsci310utils)
+[![R-CMD-check](https://github.com/DSCI-310-2024/dsci310_utils/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310-2024/dsci310_utils/actions/workflows/R-CMD-check.yaml)
 
 <!-- badges: end -->
 
@@ -99,5 +100,4 @@ testthat::test_dir("tests")
 Check out the [test sites](https://github.com/DSCI-310-2024/dsci310utils/tree/main/tests/testthat) that can find more information.
 
 ### Licenses
-
 The software content of this template repository licensed under the [MIT License](https://spdx.org/licenses/MIT.html). See the [license file](LICENSE.md) for more information.
