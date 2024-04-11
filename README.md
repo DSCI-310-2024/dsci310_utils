@@ -6,6 +6,7 @@
 <!-- badges: start -->
 
 [![codecov](https://codecov.io/gh/DSCI-310-2024/dsci310utils/branch/main/graph/badge.svg)](https://codecov.io/gh/DSCI-310-2024/dsci310utils)
+[![R-CMD-check](https://github.com/DSCI-310-2024/dsci310_utils/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310-2024/dsci310_utils/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of dsci310utils is to …
