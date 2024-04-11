@@ -31,9 +31,7 @@ jobs:
         run: |
           covr::codecov(
             quiet = FALSE,
-            clean = FALSE,
-            token = ${{ secrets.CODECOV_TOKEN }},
-            branch = 'main'
+            clean = FALSE
           )
         shell: Rscript {0}
 
