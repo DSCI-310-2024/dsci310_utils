@@ -13,6 +13,8 @@
 #' @examples
 #' unzip_URL('https://archive.ics.uci.edu/static/public/332/online+news+popularity.zip', 'data/')
 unzip_URL <- function(url, output) {
+  #Increase timeout time for larger zip files
+    options(timeout = 300)
   #unzip a zipped folder and extract files to target directory
     temp_path <- './a.zip'
     suppressMessages(download.file(url, temp_path ,mode = 'wb'))
