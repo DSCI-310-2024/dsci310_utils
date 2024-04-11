@@ -14,6 +14,8 @@
 #' in the specified directory and does not return anything.
 #' @export
 #'
+#' @examples
+#' create_conf_mat_summary(50, 10, 5, 35, "data/")
 create_conf_mat_summary <- function(TP, FP, FN, TN, output_directory) {
   # Ensure the 'readr' package is available
   if (!requireNamespace("readr", quietly = TRUE)) {
