@@ -55,11 +55,11 @@ In that case, don’t forget to commit and push the resulting figure
 files, so they display on GitHub and CRAN.
 
 ### Running the test
-Tests are run using the testthat command at the root of the project.
+Tests are run using the testthat command at the root of the project after finishing the installation and library part.
 
 Run the following command in the R terminal:
 ```
-testthat::test_dir("tests/testthat")
+testthat::test_dir("tests")
 ```
 Check out the [test sites](https://github.com/DSCI-310-2024/dsci310utils/tree/main/tests/testthat) that can find more information.
 
