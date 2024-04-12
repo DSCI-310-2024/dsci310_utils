@@ -6,7 +6,8 @@
 #' @param url A URL that links to a zipped folder download.
 #' @param output Location to extract the files to
 #'
-#' @return Nothing.
+#' @return Nothing. But saves a folder to the output 
+#' with the extracted contents in a folder.
 #'
 #' @export
 #'
