@@ -1,10 +1,8 @@
 ---
-output: github_document
----
 title: "utils-package-vignette"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{my-vignette}
+  %\VignetteIndexEntry{utils-package-vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -80,7 +78,9 @@ histogram <- make_histogram(good_df, "num_videos", "shares",
                             "Distribution of number of number of Videos",
                              "Number of Videos")
 
-# ADD USAGE FOR OTHER FUNCTIONS HERE!!!                            
+# Create a confusion matrix
+temp_dir <- tempdir()
+create_conf_mat_summary(TP = 100, FP = 10, FN = 5, TN = 85, output_directory = temp_dir)                         
 ```
 
 The histogram output on running the above code will look like this:
