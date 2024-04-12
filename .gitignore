@@ -5,5 +5,4 @@
 .DS_Store
 .quarto
 inst/doc
-docs
 _pkgdown.yml
